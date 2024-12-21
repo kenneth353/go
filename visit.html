@@ -1,0 +1,273 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Catbalogan Beach and Resort</title>
+  <!-- Bootstrap CSS -->
+  <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+  <!-- AOS Library (CSS) -->
+  <link href="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.css" rel="stylesheet">
+  <style>
+    /* Hero Section with Beach Background */
+    html, body {
+      width: 100%;
+      height: 100%;
+      margin: 0;
+      padding: 0;
+     
+    }
+    
+    
+.hero {
+    margin-top: 5vh;
+  background-image: linear-gradient(rgba(0, 0, 0, 0.35), rgba(0, 0, 0, 0.35)), url('img/bg2.jpeg');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  color: white;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+  position: relative;
+  z-index: 1;  /* Ensure it stays in the foreground */
+}
+
+/* Adjusting padding/margins for About section to avoid overlap */
+.container.section-padding {
+  padding-top: 120px;  /* Add some padding to offset the Hero section */
+}
+  .hero .text-center {
+      display: inline-block;
+    }
+
+/* Ensuring responsive image sizes */
+
+
+/* Hero Section Text */
+.hero .text-center {
+  display: inline-block;
+}
+
+/* Ensure the navbar is fixed at the top and doesn't cause horizontal overflow */
+.navbar {
+  z-index: 1000; /* Keep navbar on top */
+}
+    .navbar-nav .nav-link {
+  color: white !important; /* Ensure the text color is white */
+  position: relative; /* Set position for the pseudo-element */
+  padding-bottom: 5px; /* Add space for the underline */
+}
+
+/* Underline effect on hover */
+.navbar-nav .nav-link::after {
+  content: ''; /* Empty content */
+  position: absolute;
+  width: 0%;
+  height: 3px; /* Underline thickness */
+  background-color: #f31bcf; /* Underline color */
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%); /* Center the underline */
+  transition: width 0.3s ease, left 0.3s ease; /* Smooth transition for width and position */
+}
+
+/* Hover effect */
+.navbar-nav .nav-link:hover::after {
+  width: 100%; /* Underline grows to full width */
+ 
+}
+
+/* Optional: Add hover effect for nav-link text */
+.navbar-nav .nav-link:hover {
+  color: #f8f9fa !important; /* Slightly lighter white color on hover */
+}
+
+    .hero .text-center {
+      display: inline-block;
+    }
+
+    .hero h1, .hero p {
+      animation: moveText 5s ease-in-out infinite;
+    }
+
+    .hero a {
+      position: relative;
+    }
+
+    @keyframes moveText {
+      0% {
+        transform: translateY(0);
+      }
+      50% {
+        transform: translateY(-20px);
+      }
+      100% {
+        transform: translateY(0);
+      }
+    }
+
+    /* Section Styling */
+    .section-padding {
+      padding: 60px 0;
+    }
+
+    .section-title {
+      font-size: 36px;
+      font-weight: bold;
+      margin-bottom: 30px;
+      color: #007bff;
+    }
+
+    /* Service Cards */
+
+
+    /* Button Styling */
+    .btn-primary {
+      color: white;
+      background-color: #007bff;
+      border-color: #007bff;
+    }
+
+    .btn-primary:hover {
+      color: white;
+      background-color: #0056b3;
+      border-color: #0056b3;
+    }
+
+    /* Navbar Styling */
+    .navbar-brand img {
+      width: 40px; /* Logo size */
+      height: 40px;
+      margin-right: 10px;
+      border-radius: 50%;
+    }
+
+    .navbar-nav .nav-link {
+      color: white !important; /* Force white text color for navbar links */
+    }
+    .navbar-brand {
+      color: white !important; /* Make "Go Explore" text white */
+    }
+
+    .navbar-nav .nav-link:hover {
+      color: #f8f9fa !important; /* Slightly lighter white color on hover */
+    }
+
+    /* Add margin between navbar items */
+    .navbar-nav .nav-item {
+      margin-left: 40px; /* Adjust spacing as needed */
+    }
+
+    /* Make sure the image resizes properly */
+    .about-img {
+      width: 100%;
+      height: auto;
+    }
+
+    @media (max-width: 768px) {
+  html, body {
+    overflow-x: hidden; /* Prevent horizontal overflow on mobile */
+  }
+  .container {
+    padding-left: 15px;
+    padding-right: 15px;
+  }
+  .navbar-light {
+        background-color: white;
+      }
+}
+    
+  </style>
+</head>
+<body>
+
+  <!-- Navbar with Logo and Text on the Left, Navigation on the Right -->
+  <nav class="navbar navbar-expand-lg navbar-light bg-dark fixed-top">
+    <div class="container">
+      <a class="navbar-brand" href="#">
+        <img src="img/bg.jpg" alt="Logo"> <!-- Replace with your logo image -->
+        Go Explore
+      </a>
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarNav">
+        <ul class="navbar-nav ml-auto">
+          <li class="nav-item">
+            <a class="nav-link" href="#">Home</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#about">About</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="beach.html">Beaches</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="resort.html">Resorts</a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Hero Section -->
+  <div class="hero" data-aos="fade-up" data-aos-duration="1500">
+    <div class="text-center">
+      <h1>Welcome to Go Explore Catbalogan Beach & Resort</h1>
+      <p>Relax, unwind, and enjoy the best beach vacation</p>
+      <a href="#about" class="btn btn-primary">Learn More</a>
+    </div>
+  </div>
+
+  <!-- About Section with Scroll Animation -->
+  <div class="container section-padding" id="about">
+    <div class="row" data-aos="fade-up" data-aos-duration="1500">
+      <!-- Text Content Column -->
+      <div class="col-lg-6">
+        <h2 class="section-title">About Us</h2>
+        <p>Welcome to <strong>Go Explore Catbalogan Beach and Resort</strong>, where nature meets luxury in the stunning town of Catbalogan. Our beach resort offers a serene escape from the hustle and bustle of everyday life, offering world-class amenities, breathtaking views, and unforgettable experiences.</p>
+        <p>Whether you're here for a relaxing getaway, a family vacation, or a romantic escape, we have everything you need to make your stay memorable. Explore pristine beaches, indulge in luxurious services, and enjoy unparalleled hospitality. We're dedicated to providing every guest with a unique and personalized experience.</p>
+      </div>
+      <!-- Image Column -->
+      <div class="col-lg-6">
+        <img src="img/c.jpg" class="img-fluid about-img" alt="Go Explore Catbalogan Beach and Resort">
+      </div>
+    </div>
+  </div>
+
+  <!-- Mission and Vision Section -->
+  <div class="bg-light section-padding">
+    <div class="container text-center">
+      <h2 class="section-title">Our Mission & Vision</h2>
+      <p><strong>Mission:</strong> To provide guests with a peaceful and luxurious retreat, offering a variety of services that cater to all needs while promoting the natural beauty of Catbalogan's coastline.</p>
+      <p><strong>Vision:</strong> To become a leading beach resort in the region, known for our exceptional service, sustainability efforts, and contribution to the local community.</p>
+    </div>
+  </div>
+
+  <!-- Footer Section -->
+  <footer class="bg-dark text-white text-center py-3">
+    <p>&copy; 2024 Beach & Resort. All rights reserved.</p>
+  </footer>
+
+  <!-- Bootstrap JS and dependencies -->
+  <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.3/dist/umd/popper.min.js"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+  <!-- AOS JS -->
+  <script src="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.js"></script>
+
+  <!-- Initialize AOS -->
+  <script>
+    AOS.init({
+      duration: 1000,
+      easing: 'ease-in-out',
+      once: true,
+    });
+  </script>
+
+</body>
+</html>

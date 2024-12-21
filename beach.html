@@ -1,0 +1,353 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Catbalogan Beach and Resort</title>
+  <!-- Bootstrap CSS -->
+  <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+  <!-- AOS Library (CSS) -->
+  <link href="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.css" rel="stylesheet">
+  <style>
+    /* Ensure body and html take full height */
+    html,
+    body {
+      height: 100%;
+      margin: 0;
+      padding: 0;
+      display: flex;
+      flex-direction: column;
+    }
+
+    .container {
+      flex-grow: 1;
+    }
+
+    .row {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-between;
+    }
+
+    .card-body {
+      background-color: #f7f7f7;
+    }
+
+    /* Navbar fixed to the top */
+    .navbar {
+      z-index: 1000;
+      position: fixed;
+      width: 100%;
+    }
+
+    .navbar-nav .nav-link {
+      color: white !important;
+      position: relative;
+      padding-bottom: 5px;
+    }
+
+    /* Underline effect on hover */
+    .navbar-nav .nav-link::after {
+      content: '';
+      position: absolute;
+      width: 0%;
+      height: 3px;
+      background-color: #f31bcf;
+      bottom: 0;
+      left: 50%;
+      transform: translateX(-50%);
+      transition: width 0.3s ease, left 0.3s ease;
+    }
+
+    /* Hover effect */
+    .navbar-nav .nav-link:hover::after {
+      width: 100%;
+    }
+
+    /* Navbar Styling */
+    .navbar-brand img {
+      width: 40px;
+      height: 40px;
+      margin-right: 10px;
+      border-radius: 50%;
+    }
+
+    .navbar-nav .nav-link {
+      color: white !important;
+    }
+
+    .navbar-brand {
+      color: white !important;
+    }
+
+    .navbar-nav .nav-link:hover {
+      color: #f8f9fa !important;
+    }
+
+    /* Add margin between navbar items */
+    .navbar-nav .nav-item {
+      margin-left: 40px;
+    }
+
+    /* Add padding to body to avoid overlap with fixed navbar */
+    body {
+      padding-top: 80px;
+      display: flex;
+      flex-direction: column;
+      min-height: 100vh;
+    }
+
+    /* Footer Styling */
+    footer {
+      position: relative;
+      width: 100%;
+      padding: 20px 0;
+      background-color: #343a40;
+      text-align: center;
+      margin-top: auto;
+    }
+
+    /* Card styling */
+    .card {
+      margin-bottom: 30px;
+    }
+
+    /* Media Query for Mobile Responsiveness */
+    @media (max-width: 768px) {
+      .card-img-top {
+        width: 100%;
+        height: 200px;
+        object-fit: cover;
+      }
+
+      /* Stack the cards vertically for smaller screens */
+      .row {
+        display: block;
+      }
+
+      .card-body {
+        padding: 15px;
+      }
+
+      /* Ensure the footer is spaced correctly on mobile */
+      footer {
+        padding: 15px 0;
+      }
+
+      body {
+        padding-top: 70px; /* Adjusted for mobile view */
+      }
+    }
+
+    /* Make sure the body is taller if needed */
+    .container {
+      flex: 1;
+    }
+  </style>
+</head>
+
+<body>
+
+  <!-- Navbar with Logo and Text on the Left, Navigation on the Right -->
+  <nav class="navbar navbar-expand-lg navbar-light bg-dark fixed-top">
+    <div class="container">
+      <a class="navbar-brand" href="#">
+        <img src="img/bg.jpg" alt="Logo"> <!-- Replace with your logo image -->
+        Go Explore
+      </a>
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarNav">
+        <ul class="navbar-nav ml-auto">
+          <li class="nav-item">
+            <a class="nav-link" href="visit.html">Home</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="visit.html">About</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="beach.html">Beaches</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="resort.html">Resorts</a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Main Content Section -->
+  <div class="container mt-5">
+    <div class="row">
+      <!-- Beach Card 1 -->
+      <div class="col-md-4">
+        <div class="card">
+          <img src="img/cal.jpg" class="card-img-top" alt="Beach Image">
+          <div class="card-body">
+            <h5 class="card-title">Cal-Apog Beach</h5>
+            <p class="card-text">Enjoy a relaxing time at the beautiful Cal-Apog Beach. Perfect for vacations.</p>
+            <!-- Button to Trigger Modal -->
+            <button class="btn btn-primary" data-toggle="modal" data-target="#beachModal1">View Details</button>
+          </div>
+        </div>
+      </div>
+
+      <!-- Beach Card 2 -->
+      <div class="col-md-4">
+        <div class="card">
+          <img src="img/la.jpg" class="card-img-top" alt="Beach Image">
+          <div class="card-body">
+            <h5 class="card-title">La Playa De Bohol Beach</h5>
+            <p class="card-text">Explore the pristine waters and untouched beauty of La Playa De Bohol.</p>
+            <!-- Button to Trigger Modal -->
+            <button class="btn btn-primary" data-toggle="modal" data-target="#beachModal2">View Details</button>
+          </div>
+        </div>
+      </div>
+
+      <!-- Beach Card 3 -->
+      <div class="col-md-4">
+        <div class="card">
+          <img src="img/bu.jpg" class="card-img-top" alt="Beach Image">
+          <div class="card-body">
+            <h5 class="card-title">Buri Beach</h5>
+            <p class="card-text">Discover the hidden beauty of Buri Beach.</p>
+            <!-- Button to Trigger Modal -->
+            <button class="btn btn-primary" data-toggle="modal" data-target="#beachModal3">View Details</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Modal for Beach 1 Details -->
+  <div class="modal fade" id="beachModal1" tabindex="-1" role="dialog" aria-labelledby="beachModalLabel1" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="beachModalLabel1">Catbalogan Beach Details</h5>
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+        <div class="modal-body">
+          <h6>Location:</h6>
+          <p>Brgy: Calapog Catbalogan Samar</p>
+          <h6>Facilities:</h6>
+          <ul>
+            <li>Beachfront villas</li>
+            <li>Videoke And Cottages</li>
+            <li>Water sports and activities</li>
+          </ul>
+         <h6>Entrance:</h6>
+         <ul>
+            <li>Only 10 Pesos</li>
+         </ul>
+         <h6>Cottages:</h6>
+         <ul>
+            <li>king size: 500 pesos</li>
+            <li>medium: 350 pesos</li>
+            <li>small: 200 pesos</li>
+         </ul>
+          <h6>Description:</h6>
+          <p>Buri Beach is perfect for family vacations, romantic getaways, and solo retreats with its serene surroundings.
+            and also you can bring your own foods no korcage
+          </p>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Modal for Beach 2 Details -->
+  <div class="modal fade" id="beachModal2" tabindex="-1" role="dialog" aria-labelledby="beachModalLabel2" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="beachModalLabel2">Samar Island Beach Details</h5>
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+        <div class="modal-body">
+          <h6>Location:</h6>
+          <p>Setio. Madalunot brgy. Pangdan</p>
+          <h6>Facilities:</h6>
+          <ul>
+            <li>Bar and Hotels</li>
+            <li>Beach activities and events</li>
+            <li>Guided tours of the island</li>
+          </ul>
+          <h6>Description:</h6>
+          <p>La Playa De Bohol Beach offers stunning views, water activities, and a peaceful retreat for adventure seekers.</p>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Modal for Beach 3 Details -->
+  <div class="modal fade" id="beachModal3" tabindex="-1" role="dialog" aria-labelledby="beachModalLabel3" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="beachModalLabel3">Lobo Beach Details</h5>
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+        <div class="modal-body">
+          <h6>Location:</h6>
+          <p>Buri Catbalogan Samar</p>
+          <h6>Facilities:</h6>
+          <ul>
+            <li>cottages</li>
+            <li>Picnic areas</li>
+            <li>Boat tours</li>
+          </ul>
+          <h6>Entrance:</h6>
+          <ul>
+             <li>Only 10 Pesos</li>
+          </ul>
+          <h6>Cottages:</h6>
+          <ul>
+             <li>king size: 550 pesos overnight fo only 1000 pesos</li>
+             <li>medium: 350 pesos overnight fo only 800 pesos</li>
+             <li>small: 200 pesos overnight fo only 500 pesos</li>
+          </ul>
+          <h6>Description:</h6>
+          <p>Buri Beach is a hidden paradise with secluded areas, ideal for a relaxing vacation away from crowds.</p>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <footer class="bg-dark text-white text-center py-3">
+    <p>&copy; 2024 Beach & Resort. All rights reserved.</p>
+  </footer>
+
+  <!-- Bootstrap JS and Dependencies -->
+  <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.4/dist/umd/popper.min.js"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+  <!-- AOS JS -->
+  <script src="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.js"></script>
+
+  <script>
+    AOS.init({
+      duration: 1200,
+    });
+  </script>
+
+</body>
+
+</html>
